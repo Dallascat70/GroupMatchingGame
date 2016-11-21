@@ -18,15 +18,13 @@ while (theRightSide.firstChild) {
 
 
 for (i = 0; i < numberOfFaces; ++ i) {
-    elem_img = document.createElement("img");
-    elem_img.src = "Doge.png";
+    var img = document.createElement("img");
+    img.src = "Doge.png";
 
 
-    elem_img.style.top = Math.floor(Math.random()* 501) + "px";
-    elem_img.style.left = Math.floor(Math.random()* 501) + "px";
-    theLeftSide.appendChild(elem_img);
-
-
+    img.style.top = Math.floor(Math.random()* 400) + "px";
+    img.style.left = Math.floor(Math.random()* 400) + "px";
+    theLeftSide.appendChild(img);
 
 }
     leftSideImages = theLeftSide.cloneNode(true);
@@ -39,7 +37,7 @@ for (i = 0; i < numberOfFaces; ++ i) {
             numberOfFaces += 5;
             generateFaces();
 
-}
+};
 
 
 
