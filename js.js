@@ -1,32 +1,49 @@
 window.onload(generateFaces());
 
-function generateFaces() {
-var img = document.getElementById("img");
-img.src = "Doge.png";
-
-    document.createElement("img").src = "Doge.png";
-
-
-
-}
-
-
-
-
 var numberOfFaces = 5;
 var theLeftSide = document.getElementById("leftSide");
 var theRightSide = document.getElementById("rightSide");
 var theBody = document.getElementsByTagName("body")[0];
 
 
-leftSideImages = theLeftSide.cloneNode(true);
 
-theLeftSide.lastChild.onclick=
-    function nextLevel(event){
-    event.stopPropagation();
-        numberOfFaces += 5;
-        generateFaces();
-    };
+function generateFaces() {
+while(theLeftSide.firstChild){
+    theLeftSide.removeChild(theLeftSide.firstChild)
+}
+while (theRightSide.firstChild) {
+    theRightSide.removeChild(theRightSide.firstChild)
+}
+
+
+
+for (i = 0; i < numberOfFaces; ++ i) {
+    elem_img = document.createElement("img");
+    elem_img.src = "Doge.png";
+
+
+    elem_img.style.top = Math.floor(Math.random()* 501) + "px";
+    elem_img.style.left = Math.floor(Math.random()* 501) + "px";
+    theLeftSide.appendChild(elem_img);
+
+
+
+}
+    leftSideImages = theLeftSide.cloneNode(true);
+    leftSideImages.removeChild(leftSideImages.lastChild);
+    theRightSide.appendChild(leftSideImages);
+
+    theLeftSide.lastChild.onclick=
+        function nextLevel(event){
+            event.stopPropagation();
+            numberOfFaces += 5;
+            generateFaces();
+
+}
+
+
+
+    }
 
     theBody.onclick =function gameOver() {
         alert("Game Over!");

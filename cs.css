@@ -15,10 +15,15 @@
 
 #img {
     position: absolute;
-    height: 100px;
+    height: 150px;
+    width: 150px;
 
 }
 div {
     background-image: url("grass.jpg");
 
+}
+h3 {
+    position: relative;
+    color: forestgreen;
 }
