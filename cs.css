@@ -13,7 +13,7 @@
 
 }
 
-#img {
+img {
     position: absolute;
     height: 150px;
     width: 150px;
@@ -21,9 +21,15 @@
 }
 div {
     background-image: url("grass.jpg");
+    width:1000px; margin:0 auto;
 
 }
-h3 {
+h1 {
     position: relative;
     color: forestgreen;
 }
+
+h3 {
+    color: forestgreen;
+}
+
